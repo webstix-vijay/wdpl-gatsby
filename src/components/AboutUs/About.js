@@ -9,7 +9,7 @@ export default function About() {
   const Image = data.wpPage.featuredImage.node.localFile.publicURL
 
   return (
-    <section class="relative  overflow-hidden py-32  " id="about">
+    <section class="relative  overflow-hidden py-28  " id="about">
       <div class="container mx-auto">
         <div class="-mx-4 flex flex-wrap lg:justify-between">
           <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
