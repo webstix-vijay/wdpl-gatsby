@@ -3,7 +3,7 @@ import React from "react"
 export default function ContactUs() {
   return (
     <>
-      <section class="relative  overflow-hidden py-20 lg:py-[120px]">
+      <section class="relative  overflow-hidden py-10">
         <div class="container mx-auto">
           <div class="-mx-4 flex flex-wrap lg:justify-between">
             <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
@@ -57,9 +57,7 @@ export default function ContactUs() {
                     <h4 class="text-dark mb-1 text-xl font-bold">
                       Phone Number
                     </h4>
-                    <p class="text-body-color text-base">
-                      (+62)81 414 257 9980
-                    </p>
+                    <p class="text-body-color text-base">(+91)123 456 7890</p>
                   </div>
                 </div>
                 <div class="mb-8 flex w-full max-w-[370px]">

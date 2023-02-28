@@ -5,3 +5,11 @@
 html {
   font-family: "Antonio", sans-serif;
 }
+
+.react-read-more-read-less {
+  font-weight: 700;
+  color: #a51720;
+}
+.clsApplybtn {
+  width: fit-content;
+}
