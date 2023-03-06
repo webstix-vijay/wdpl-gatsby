@@ -3,11 +3,8 @@ import { useTeamQuery } from "../../hooks/useTeamQuery"
 
 export const Team = () => {
   const data = useTeamQuery()
-  const team = data.allWpTeam.edges
-
-  const role = data.allWpTeam
-
-  const url = data.allWpTeam.edges[2].node.teamDetails.photo
+  const output = data.allWpTeam
+  console.log(output)
 
   return (
     <div
@@ -16,7 +13,7 @@ export const Team = () => {
     >
       <div className="mx-auto mb-10 lg:max-w-xl sm:text-center"></div>
       <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg">
-        {team.map(t => (
+        {data.map(t => (
           <div>
             <div className="relative pb-56 mb-4 rounded shadow lg:pb-64">
               <img

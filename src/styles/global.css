@@ -11,5 +11,46 @@ html {
   color: #a51720;
 }
 .clsApplybtn {
+  width: 100px;
+  display: inline-flex;
+}
+
+.react-read-more-read-less-less {
+  border: 1px solid #aaa;
+  display: block;
   width: fit-content;
+  padding: 10px 20px;
+  left: 0px;
+  margin-top: 20px;
+}
+.react-read-more-read-less-more {
+  border: 1px solid #aaa;
+  display: block;
+  width: fit-content;
+  left: 0px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+.react-read-more-read-less-less:hover {
+  background: #000;
+  color: #fff;
+}
+.react-read-more-read-less-more:hover {
+  background: #000;
+  color: #fff;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  color: #a51720;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a51720;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+iframe {
+  width: 100%;
 }

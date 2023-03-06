@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useOpeningQuery = () => {
   const data = useStaticQuery(graphql`
     query OpeningQuery {
-      allWpOpenings {
+      allWpOpenings(sort: { date: DESC }) {
         nodes {
           openingdetails {
             description
@@ -15,6 +15,7 @@ export const useOpeningQuery = () => {
               target
             }
           }
+          date(fromNow: true)
           tags {
             nodes {
               name

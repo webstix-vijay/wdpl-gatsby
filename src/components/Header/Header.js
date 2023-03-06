@@ -12,7 +12,6 @@ const Header = () => {
 
   const closeMenu = () => setClick(false)
   const { wpMenu } = useMenuQuery()
-  console.log(wpMenu)
   const menu = wpMenu.menuItems.nodes
 
   return (
@@ -23,15 +22,15 @@ const Header = () => {
         </a>
         <div className="hamburger" onClick={handleClick}>
           {click ? (
-            <FaTimes size={30} style={{ color: "#ffffff" }} />
+            <FaTimes size={30} style={{ color: "#000" }} />
           ) : (
-            <FaBars size={30} style={{ color: "#ffffff" }} />
+            <FaBars size={30} style={{ color: "#000" }} />
           )}
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           {menu.map(mainItem =>
             !mainItem.parentId ? (
-              <li key={mainItem.id} className="md:ml-8 text-base md:my-0 my-4">
+              <li key={mainItem.id} className="md:ml-8 text-base md:my-4 my-4">
                 <Link
                   to={mainItem.url}
                   onClick={closeMenu}

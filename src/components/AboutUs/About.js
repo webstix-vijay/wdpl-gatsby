@@ -5,40 +5,39 @@ import ReactReadMoreReadLess from "react-read-more-read-less"
 export default function About() {
   const data = useAboutQuery()
   console.log(data)
-  const Content = data.wpPage
+  const title = data.wpPage.title
+  const Content = data.wpPage.aboutus.aboutus
   const Image = data.wpPage.featuredImage.node.localFile.publicURL
 
   return (
-    <section class="relative  overflow-hidden py-28  " id="about">
-      <div class="container mx-auto">
-        <div class="-mx-4 flex flex-wrap lg:justify-between">
-          <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
-            <div class="mb-12 max-w-[570px] lg:mb-0">
-              <span class="text-primary mb-4 block text-base font-semibold"></span>
-              <h2 class="text-dark mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-                {data.wpPage.title}
-              </h2>
-              <p class="text-body-color mb-9 text-base leading-relaxed">
-                <ReactReadMoreReadLess
-                  charLimit={380}
-                  readMoreText={"Read More ▼"}
-                  readLessText={"Read Less ▲"}
-                >
-                  {data.wpPage.aboutus.aboutus}
-                </ReactReadMoreReadLess>
-              </p>
-              <div class="mb-8 flex w-full max-w-[370px]"></div>
+    <div class="container my-24  mx-auto pt-12 md:px-3">
+      <section class="mb-32 text-gray-800">
+        <div class="flex flex-wrap">
+          <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-12/12 md:pb-8 lg:w-6/12 px-3 lg:px-2">
+            <h2 class="text-3xl font-bold mb-6 text-[#a31e22] text-[40px] uppercase pt-4">
+              {title}
+            </h2>
+            <div class="flex items-start rounded-xl bg-white  lg:w-[90%] ">
+              <div class="">
+                <p className="leading-7 text-[17px]">
+                  <ReactReadMoreReadLess
+                    charLimit={340}
+                    readMoreText={"Read More "}
+                    readLessText={"Read Less "}
+                  >
+                    {data.wpPage.aboutus.aboutus}
+                  </ReactReadMoreReadLess>
+                </p>
+              </div>
+
+              <div class="ml-4"></div>
             </div>
           </div>
-          <div class="w-full lg:w-1/2 xl:w-6/12">
-            <div class="relative  sm:p-10">
-              <div>
-                <img src={Image} />
-              </div>
-            </div>
+          <div class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 sm:mb-[0px] w-full md:w-12/12 lg:w-6/12 px-3 pt-1  lg:px-6">
+            <img src={Image} />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
