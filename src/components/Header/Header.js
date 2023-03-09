@@ -1,43 +1,40 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import Logo from "../../images/webstix.png"
+import logo from "../../images/webstix.png"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import closeIcon from "../../images/close-icon.png"
+import { FaBars, FaTimes } from "react-icons/fa"
+import "../Header/Navbar.css"
 
 const Header = () => {
-  // const { site, wpMenu } = useMenuQuery()
+  const [click, setClick] = useState(false)
+  const handleClick = () => setClick(!click)
 
-  // const menu = wpMenu.menuItems.nodes
-  // let [open, setOpen] = useState(false)
+  const closeMenu = () => setClick(false)
+  const { wpMenu } = useMenuQuery()
+  const menu = wpMenu.menuItems.nodes
 
   return (
-    <div className=" shadow-md w-full fixed top-0 left-0 z-10">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
-        <div
-          className="font-bold text-2xl cursor-pointer flex items-center font-[Antonio] 
-      text-gray-800"
-        >
-          <img src={Logo} alt="wdpl_logo" />
+    <div className="header">
+      <nav className="navbar">
+        <a href="/" className="logo">
+          <img src={logo} alt="logo" />
+        </a>
+        <div className="hamburger" onClick={handleClick}>
+          {click ? (
+            <FaTimes size={30} style={{ color: "#000" }} />
+          ) : (
+            <FaBars size={30} style={{ color: "#000" }} />
+          )}
         </div>
-
-        <div
-          // onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
-        >
-          {/* <img src={closeIcon} name={open ? "close" : "menu"} className="w-8" /> */}
-          <img src={closeIcon} className="w-8" />
-        </div>
-
-        {/* <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-            open ? "top-20 " : "top-[-490px]"
-          }`}
-        >
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
           {menu.map(mainItem =>
             !mainItem.parentId ? (
-              <li key={mainItem.id} className="md:ml-8 text-base md:my-0 my-7">
+              <li key={mainItem.id} className="md:ml-8 text-base md:my-4 my-4">
                 <Link
                   to={mainItem.url}
+                  onClick={closeMenu}
+                  activeClassName="nav-active"
                   className="text-gray-800 hover:text-gray-400 duration-500"
                 >
                   {mainItem.label}
@@ -46,13 +43,11 @@ const Header = () => {
                 {mainItem.childItems.nodes.length !== 0 ? (
                   <ul>
                     {mainItem.childItems.nodes.map(childItem => (
-                      <li
-                        key={childItem.id}
-                        className="md:ml-8 text-xl md:my-0 my-7"
-                      >
+                      <li key={childItem.id}>
                         <Link
                           to={childItem.url}
-                          className="text-gray-800 hover:text-gray-400 duration-500"
+                          activeClassName="nav-active"
+                          onClick={closeMenu}
                         >
                           {childItem.label}
                         </Link>
@@ -63,16 +58,8 @@ const Header = () => {
               </li>
             ) : null
           )}
-        </ul> */}
-        <ul>
-          <li>Link</li>
-          <li>Link</li>
-          <li>Link</li>
-          <li>Link</li>
-          <li>Link</li>
-          <li>Link</li>
         </ul>
-      </div>
+      </nav>
     </div>
   )
 }
