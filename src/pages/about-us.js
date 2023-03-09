@@ -1,5 +1,5 @@
 import React from "react"
-import About from "../components/AboutUs/About"
+import AboutOne from "../components/AboutUs/AboutOne"
 import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
 
@@ -7,7 +7,7 @@ export default function AboutUs() {
   return (
     <>
       <Header />
-      <About />
+      <AboutOne />
       <Footer />
     </>
   )

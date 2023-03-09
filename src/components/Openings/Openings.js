@@ -5,20 +5,23 @@ const Openings = () => {
   const data = useOpeningQuery()
   const opening = data.allWpOpenings.nodes
   console.log(opening)
+  console.log(data)
 
   return (
     <>
       <div className=" mx-auto lg:max-w-screen-lg py-20">
-        {opening.map((list, index) => {
+        {data.allWpOpenings.nodes.map((list, index) => {
           return (
             <div className="mt-10 rounded overflow-hidden shadow-lg">
               <div className="px-6 py-4 text-left">
-                <h4 className="text-black font-semibold  text-lg font-[roboto">
-                  {list.openingdetails.jobtitle}
+                <h4 className="text-black font-semibold  text-lg">
+                  {list.title}
                 </h4>
-                <p className=" text-md leading-7 mt-2 text-gray-600 mb-4">
-                  {list.openingdetails.description}
-                </p>
+                <ul>
+                  <li className=" text-md leading-7 mt-2 text-gray-600 mb-4">
+                    {list.content}
+                  </li>
+                </ul>
                 <div className="w-full">
                   {list.tags.nodes.map((i, j) => (
                     <div key={i.id} className="inline-flex">

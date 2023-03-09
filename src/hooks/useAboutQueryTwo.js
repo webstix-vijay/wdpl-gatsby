@@ -2,8 +2,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 export const useAboutQuery = () => {
   const data = useStaticQuery(graphql`
-    query AboutQuery {
-      wpPage(databaseId: { eq: 48 }) {
+    query AboutQueryTwo {
+      wpPage(databaseId: { eq: 258 }) {
         title
         featuredImage {
           node {

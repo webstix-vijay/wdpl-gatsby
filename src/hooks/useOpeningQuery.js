@@ -5,12 +5,9 @@ export const useOpeningQuery = () => {
     query OpeningQuery {
       allWpOpenings(sort: { date: DESC }) {
         nodes {
+          blocks
           openingdetails {
-            description
-            fieldGroupName
-            jobtitle
             applynow {
-              title
               url
               target
             }
@@ -22,6 +19,8 @@ export const useOpeningQuery = () => {
               id
             }
           }
+          title
+          content
         }
       }
     }

@@ -6,6 +6,7 @@ export const useContactQuery = () => {
       wpPage(databaseId: { eq: 64 }) {
         title
         content
+        blocks
       }
     }
   `)
