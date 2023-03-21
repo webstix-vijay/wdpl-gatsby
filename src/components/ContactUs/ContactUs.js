@@ -16,7 +16,7 @@ export default function ContactUs() {
       <section class="max-w-[85rem] mx-auto mt-[6rem] lg:px-6 mb-[7rem]">
         <div class="flex flex-wrap">
           <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-7/12 md:pb-8 lg:w-6/12 px-3 lg:px-6">
-            <h2 class="text-3xl font-bold mb-8 text-[#a31e22] text-[36px] uppercase">
+            <h2 class="text-3xl font-bold mb-8 text-[#000] text-[36px] capitalize">
               {title}
             </h2>
             <div class="flex items-start rounded-xl bg-white p-4 shadow-lg  lg:w-[70%]">

@@ -42,9 +42,9 @@ function Carousel() {
                 />
 
                 <div class="xl:mt-7 w-full sm:inline-flex pb-[30px] pt-[10px]">
-                  <Link to="/about-us">
+                  <Link to="/careers">
                     <button
-                      class="inline-flex justify-center items-center  bg-[#a31e22] mt-6 hover:bg-[#000] text-[#fff] font-semibold hover:text-[#fff] py-2 px-4 border hover:border-[#000]"
+                      class="inline-flex justify-center items-center  bg-[#a31e22] mt-6 hover:bg-[#000] text-[#fff] font-semibold hover:text-[#fff] py-2 px-5 border hover:border-[#000]"
                       href="#"
                     >
                       Join Us

@@ -10,14 +10,19 @@ export const useTeamQuery = () => {
             linkedin
             fieldGroupName
             designation
-            categories
           }
           featuredImage {
             node {
               sourceUrl
             }
           }
+          title
+          content
         }
+      }
+      wpPage(databaseId: { eq: 51 }) {
+        title
+        content
       }
     }
   `)

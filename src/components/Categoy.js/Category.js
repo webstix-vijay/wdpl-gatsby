@@ -14,7 +14,6 @@ const Category = ({ catId, categories }) => {
         if (cat.node.count !== 0) {
           return cat.node.slug !== "uncategorized" ? (
             <li key={cat.node.id}>
-              <span>{cat.node.count}</span>
               <Link to={cat.node.uri}>
                 <span dangerouslySetInnerHTML={{ __html: cat.node.name }} />
               </Link>

@@ -1,74 +1,119 @@
 import { Link } from "gatsby"
 import React from "react"
 import { useTeamQuery } from "../../hooks/useTeamQuery"
+import { FaTwitterSquare } from "react-icons/fa"
+import { FaArrowRight } from "react-icons/fa"
 
 export const Team = () => {
   const data = useTeamQuery()
+  console.log(data)
   const team = data.allWpTeam.nodes
+  const title = data.wpPage.title
+  const content = data.wpPage.content
+
   console.log(team)
 
   return (
-    <div
-      className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
-      id="team"
-    >
-      <div className="mx-auto mb-10 lg:max-w-xl sm:text-center"></div>
-      <div className="grid gap-4 mx-auto sm:grid-cols-2 lg:grid-cols-4 ">
-        <Link to="/category/projects">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front"></div>
-              <div class="flip-card-back"></div>
-            </div>
-          </div>
+    <div class="max-w-[85rem] mx-auto  lg:px-6 flex mb-[100px]">
+      <div class="mb-10 md:mb-16  w-[34%] pr-[75px] fixed mt-[8rem]">
+        <h2 class="text-3xl font-bold mb-6 text-[#000] text-[40px] capitalize pt-4">
+          {title}
+        </h2>
+
+        <p
+          class="max-w-screen-md mx-auto text-left md:text-lg"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+
+        <div className="block">
+          <Link to="/category/projects">
+            <button
+              type="button"
+              class=" rounded-lg text-sm  text-center inline-flex items-center bg-[#fff] mt-6 hover:bg-[#000] text-[#000] font-semibold hover:text-[#fff] py-[7px] px-[14px] border border-black mr-3"
+            >
+              Projects
+              <span className="pl-2">
+                <FaArrowRight />
+              </span>
+            </button>
+          </Link>
+
+          <Link to="/category/design">
+            <button
+              type="button"
+              class="rounded-lg text-sm  text-center inline-flex items-center bg-[#fff] mt-6 hover:bg-[#000] text-[#000] font-semibold hover:text-[#fff] py-[7px] px-[14px] border border-black"
+            >
+              Design
+              <span className="pl-2">
+                <FaArrowRight />
+              </span>
+            </button>
+          </Link>
+        </div>
+
+        <div className="block">
+          <Link to="/category/seo">
+            <button
+              type="button"
+              class="rounded-lg text-sm  text-center inline-flex items-center bg-[#fff] mt-4 hover:bg-[#000] text-[#000] font-semibold hover:text-[#fff] py-[7px] px-[14px] border border-black mr-3"
+            >
+              Seo
+              <span className="pl-2">
+                <FaArrowRight />
+              </span>
+            </button>
+          </Link>
+
+          <Link to="/category/proposal">
+            <button
+              type="button"
+              class="rounded-lg text-sm  text-center inline-flex items-center bg-[#fff] mt-4 hover:bg-[#000] text-[#000] font-semibold hover:text-[#fff] py-[7px] px-[14px] border border-black"
+            >
+              Proposal
+              <span className="pl-2">
+                <FaArrowRight />
+              </span>
+            </button>
+          </Link>
+        </div>
+        <Link to="/organization">
+          <button class="bg-[#fff] mt-8 hover:bg-[#000] text-[#000] font-semibold hover:text-[#fff] py-2 px-4 border border-black">
+            Organization Chart
+          </button>
         </Link>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"></div>
-            <div class="flip-card-back"></div>
-          </div>
-        </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"></div>
-            <div class="flip-card-back"></div>
-          </div>
-        </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"></div>
-            <div class="flip-card-back"></div>
-          </div>
-        </div>
       </div>
-      <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg">
+
+      <div class="grid gap-4 md:grid-cols-3 w-[62%] ml-auto h-fit mt-[8rem]">
         {team.map(t => (
-          <div className="">
-            <div className="relative pb-56 mb-4 rounded shadow lg:pb-64">
+          <div class="p-4 shadow max-h-[460px]">
+            <div class="h-[250px] mb-2 overflow-hidden rounded-lg bg-[#f5f5f5] shadow-lg md:h-[250px]">
               <img
-                className="absolute object-cover w-full h-full rounded"
                 src={t.featuredImage.node.sourceUrl}
-                alt="Person"
+                alt="Image"
+                class="object-contain object-center w-full h-[280px]"
               />
             </div>
 
-            <div className="flex flex-col sm:text-center">
-              <p className="text-lg font-bold">{t.title}</p>
+            <div class="flex flex-col items-left justify-center">
+              <div class="font-bold text-[#000] md:text-lg">{t.title}</div>
+              <p class="mb-3 text-sm text-gray-500 md:text-base md:mb-3">
+                Founder / CEO
+              </p>
               <p
-                className="mb-5 text-xs text-gray-800"
+                className="mb-2"
                 dangerouslySetInnerHTML={{ __html: t.content }}
-              ></p>
+              />
+
+              <div class="flex">
+                <div class="flex gap-4">
+                  <a href="#">
+                    <FaTwitterSquare className="text-[#26a7de] text-[25px]" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="flex justify-center items-end h-full pb-6">
-        <Link to="/careers">
-          <button class="bg-[#a31e22] mt-6 hover:bg-[#fff] text-[#fff] font-semibold hover:text-[#a31e22] py-2 px-4 border hover:border-black">
-            Join Us
-          </button>
-        </Link>
       </div>
     </div>
   )
