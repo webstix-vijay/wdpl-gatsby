@@ -178,24 +178,323 @@ iframe {
   color: white;
   transform: rotateY(180deg);
 }
+@media screen and (min-width: 1800px) {
+  .clsteamContent {
+    max-width: 25% !important;
+  }
+  .clsOpeningContent {
+    max-width: 25% !important;
+  }
+}
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1330px) {
+  .header .navbar {
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .clsteamContainer {
+    padding: 0px 20px;
+  }
+  .clsteamImage {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .clsOpeningContainer {
+    display: block;
+  }
+  .clsOpeningContent {
+    position: relative;
+    width: 100%;
+  }
+  .clsOpeningImageContainer {
+    width: 100% !important;
+  }
+  .clsImgheight {
+    height: 200px;
+  }
+  .clsOpeningImageContainerdiv {
+    max-height: 550px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .clsHomeBanner {
     padding-right: 15px;
     padding-left: 15px;
   }
+
+  .clsteamImage {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .clsteamImage img {
+    object-fit: contain;
+  }
+  .clsGalleryContainer {
+    display: block;
+  }
+  .clsGalleryContentdiv {
+    width: 100%;
+    padding: 0px 30px;
+  }
+  .clsGalleryImages {
+    width: 100%;
+    padding: 0px 20px;
+  }
+  .clsOpeningContainer {
+    padding: 0px 30px;
+  }
+  .clsImgheight {
+    height: 140px;
+  }
+  .clsOpeningContent {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  .clsOpeningContainer {
+    margin-bottom: 100px;
+  }
+  .clshomeGalleryContainer {
+    display: block;
+  }
+  .clsHomeGallerydivOne {
+    width: 100%;
+    height: 40%;
+  }
+  .clsHomeGalleryImg {
+    display: none;
+  }
+  .clsHomeGallery {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
 }
+@media screen and (max-width: 768px) {
+  /**** OUR TEAM *****/
+  .clsteamContainer {
+    display: block;
+    padding: 0% 20px;
+  }
+  .clsteamContent {
+    max-width: 100%;
+    position: relative;
+  }
+  .clsteamImage {
+    width: 100%;
+  }
+  .clsOpeningContainer {
+    display: block;
+  }
+  .clsOpeningContent {
+    width: 100%;
+    position: relative;
+  }
+  .clsOpeningImageContainer img {
+    position: relative;
+  }
+  .clsImgheight {
+    max-height: 540px !important;
+  }
+  .clsteamImage .clsTeamImagediv {
+    height: 240px !important;
+  }
+  .clsHomeGallery {
+    margin-top: 25px !important;
+  }
+  .clsContact {
+    margin-top: 250px;
+  }
+  .clsAbouttwo {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .clsHomeGalleryMain {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .clsContact {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .clsAboutOne {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+  }
+  .clsAboutContentdiv {
+    width: 100%;
+  }
+  .clsContactSinglePage .clsContact {
+    margin-top: 130px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .clsContact {
+    margin-top: 250px;
+  }
+  .clsAbouttwo {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
 @media screen and (min-width: 425px) {
   .clsHomeBannertitle {
     font-size: 30px;
+    padding-bottom: 10px;
   }
   .clsHomeBanner {
-    padding-right: 15px;
-    padding-left: 15px;
+    margin-top: 100px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
+
 @media screen and (max-width: 425px) {
   .modal {
     max-width: 300px !important;
   }
+  .clsteamImage {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .clsteamImage .clsTeamImagediv {
+    height: 215px !important;
+  }
+  .clsDesignation {
+    font-size: 12px;
+  }
+  .clsContent {
+    font-size: 15px;
+  }
+  .clsteamContainer {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .clsteamImage .clsTeamImagediv {
+    height: 165px !important;
+  }
+  .clsTeamImagediv img {
+    height: 200px !important;
+  }
+  .clsApplybtn {
+    font-size: 13px;
+  }
+}
+
+.sidekick {
+  position: relative;
+  padding-left: 20px;
+  border-left: 0.2em solid #a51720;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+  font-weight: 100;
+}
+.sidekick:before,
+.sidekick:after {
+  color: #a51720;
+  font-size: 36px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.sidekick:before {
+  content: "\201c";
+}
+.sidekick:after {
+  content: "\201e";
+}
+.sidekick cite {
+  font-size: 50%;
+  text-align: center;
+  top: 50%;
+}
+.sidekick cite:before {
+  content: " \2015 ";
+}
+.cat-active {
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  font-size: 12px;
+  max-height: 35px;
+  padding: 7px 14px;
+  border-radius: 0.5rem;
+  margin-right: 0.8rem;
+  font-weight: 600;
+}
+.clsteamContent {
+  padding: 0px 15px;
+}
+.swiper,
+.swiper-container {
+  z-index: 0 !important;
+}
+.clsOpeningImageContainerdiv {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+blockquote {
+  font-size: 1.4em;
+  width: 60%;
+  margin: 50px auto;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #78c0a8;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: #78c0a8;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: "";
+}
+
+blockquote span {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+/* .clsHomeGallerybg {
+  background: url("../images/HomeGallerybg.jpg");
+  padding-top: 10px;
+  padding-bottom: 50px;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  background-position: center;
+} */
+
+.clsContactSinglePage {
+  margin-top: 150px;
+}
+.clsTeamImagediv {
+  position: relative;
+}
+.diagonal {
+  white-space: nowrap;
+  position: absolute;
+  padding: 10px 20px;
+  min-width: 0px;
+  right: 0;
+  bottom: 0;
+  transform: rotate(-45deg) translate(15%, 150%);
+  background-color: #2980b9;
 }

@@ -9,10 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 import "../Gallery/gallery.css"
-import { useOutingQuery } from "../../hooks/useOutingQuery"
+import { useTripQuery } from "../../hooks/useTripQuery"
 
-const GalleryOuting = () => {
-  const data = useOutingQuery()
+const GalleryTrip = () => {
+  const data = useTripQuery()
   console.log(data)
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
@@ -116,4 +116,4 @@ const GalleryOuting = () => {
   )
 }
 
-export default GalleryOuting
+export default GalleryTrip

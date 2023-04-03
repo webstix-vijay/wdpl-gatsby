@@ -13,10 +13,12 @@ export default function index() {
   return (
     <>
       <Header />
-      <Carousel />
-      <AboutUsTwo />
-      <Homegallery />
-      <ContactUs />
+      <div clasName="clsHomeContainer">
+        <Carousel />
+        <AboutUsTwo />
+        <Homegallery />
+        <ContactUs />
+      </div>
       <Footer />
     </>
   )

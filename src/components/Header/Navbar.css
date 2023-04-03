@@ -46,6 +46,7 @@
 }
 .nav-active {
   color: #a51720 !important;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 940px) {
@@ -87,5 +88,10 @@
 @media screen and (max-width: 940px) {
   .header .navbar {
     padding: 0px 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0px 15px;
   }
 }

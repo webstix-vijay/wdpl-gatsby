@@ -9,10 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 import "../Gallery/gallery.css"
-import { useOutingQuery } from "../../hooks/useOutingQuery"
+import { useOfficeQuery } from "../../hooks/useOfficeQuery"
 
-const GalleryOuting = () => {
-  const data = useOutingQuery()
+const GalleryOffice = () => {
+  const data = useOfficeQuery()
   console.log(data)
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
@@ -82,7 +82,7 @@ const GalleryOuting = () => {
       Total Slides: {galleryImages.length}
       <br /><br /> */}
 
-        <div className="galleryWrap container mx-auto">
+        <div className="galleryWrap container mx-auto ">
           {slice &&
             slice.map((slide, index) => {
               return (
@@ -116,4 +116,4 @@ const GalleryOuting = () => {
   )
 }
 
-export default GalleryOuting
+export default GalleryOffice

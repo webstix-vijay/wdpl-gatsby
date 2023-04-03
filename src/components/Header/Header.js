@@ -10,22 +10,23 @@ const Header = () => {
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
 
-  const [top, setTop] = useState(true)
+  // const [top, setTop] = useState(true)
 
-  useEffect(() => {
-    const scrollHandler = () => {
-      window.pageYOffset > 10 ? setTop(false) : setTop(true)
-    }
-    window.addEventListener("scroll", scrollHandler)
-    return () => window.removeEventListener("scroll", scrollHandler)
-  }, [top])
+  // useEffect(() => {
+  //   const scrollHandler = () => {
+  //     window.pageYOffset > 10 ? setTop(false) : setTop(true)
+  //   }
+  //   window.addEventListener("scroll", scrollHandler)
+  //   return () => window.removeEventListener("scroll", scrollHandler)
+  // }, [top])
 
   const closeMenu = () => setClick(false)
   const { wpMenu } = useMenuQuery()
   const menu = wpMenu.menuItems.nodes
 
   return (
-    <div className={`header ${!top && `bg-white shadow-lg`}`}>
+    // <div className={`header ${!top && `bg-white shadow-lg`}`}>
+    <div className="header bg-white shadow-md ">
       <nav className="navbar">
         <a href="/" className="logo">
           <img src={logo} alt="logo" />
@@ -40,7 +41,7 @@ const Header = () => {
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           {menu.map(mainItem =>
             !mainItem.parentId ? (
-              <li key={mainItem.id} className="md:ml-8 text-base md:my-4 my-4">
+              <li key={mainItem.id} className="md:ml-8 text-base md:my-5 my-5">
                 <Link
                   to={mainItem.url}
                   onClick={closeMenu}

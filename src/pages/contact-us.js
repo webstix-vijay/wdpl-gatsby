@@ -7,7 +7,9 @@ export default function careers() {
   return (
     <>
       <Header />
-      <ContactUs />
+      <div className="clsContactSinglePage">
+        <ContactUs />
+      </div>
       <Footer />
     </>
   )

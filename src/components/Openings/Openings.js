@@ -8,30 +8,48 @@ import { HiArrowNarrowRight } from "react-icons/hi"
 const Openings = () => {
   const data = useOpeningQuery()
   const opening = data.allWpOpenings.nodes
+  const title = data.wpPage.title
   const Content = data.wpPage.content
   console.log(opening)
 
   return (
     <>
       <div
-        className="px-4 py-16 mx-auto max-w-[85rem]  md:px-24 lg:px-8 lg:py-20 flex"
+        className="px-4 py-16 mx-auto max-w-[85rem] lg:px-8 lg:py-20 flex  clsOpeningContainer"
         id="team"
       >
-        <div className="mx-auto mb-10 sm:text-left xl:w-[30%]  mt-[40px] fixed ">
-          <h1 className="text-[40px]  text-[#000] font-bold">Work With Us</h1>
+        <div className=" w-[30%]  lg:mt-[40px] fixed clsOpeningContent">
+          <h1 className="text-[40px]  text-[#000] font-bold">{title}</h1>
           <p
             className="text-[17px] pt-4"
             dangerouslySetInnerHTML={{ __html: Content }}
           />
+
+          <div className="flex items-center">
+            <div>
+              <Link to="/about-us">
+                <button class="bg-[#fff] mt-8 mr-6 hover:bg-[#000] text-[#000] font-semibold hover:text-[#fff] py-2 px-6 border border-black">
+                  About Us
+                </button>
+              </Link>
+            </div>
+            <div>
+              <Link to="/our-team">
+                <button class="bg-[#fff] mt-8 hover:bg-[#000] text-[#000] font-semibold hover:text-[#fff] py-2 px-6 border border-black">
+                  Our Team
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <div className="grid gap-10 ml-auto sm:grid-cols-2 lg:grid-cols-2 lg:w-[55%] h-fit clsScroll mt-[55px] scroll">
+        <div className="grid gap-10 ml-auto sm:grid-cols-2 lg:grid-cols-2 lg:w-[55%] h-fit lg:mt-[60px] clsScroll  scroll clsOpeningImageContainer">
           {data.allWpOpenings.nodes.map((list, index) => {
             return (
-              <div className="rounded overflow-hidden shadow-lg max-h-[500px]">
-                <div className="relative mb-4 rounded  overflow-hidden shadow-lg lg:pb-36  bg-black">
+              <div className="rounded overflow-hidden max-h-[500px] clsOpeningImageContainerdiv">
+                <div className="relative mb-4 rounded  overflow-hidden shadow-lg lg:pb-36 bg-[#f5f5f5] clsImgheight">
                   <img
-                    className="absolute object-cover w-[100%] h-full rounded"
+                    className="absolute object-contain object-bottom w-[100%] h-full rounded"
                     src={list.featuredImage.node.sourceUrl}
                     alt="Person"
                   />
@@ -58,7 +76,7 @@ const Openings = () => {
                     <Popup
                       trigger={
                         <button className="button w-full text-right flex items-center justify-end pt-[5px] text-[15px]">
-                          View More
+                          Read More
                           <span className="pl-[5px] flex">
                             <HiArrowNarrowRight />
                           </span>
@@ -88,8 +106,8 @@ const Openings = () => {
 
                             <div class=" px-6 text-center pb-4 rounded-[2px]">
                               <a
-                                class="inline-flex justify-center items-center  bg-[#a31e22] mt-4 hover:bg-[#000] text-[#fff] font-semibold hover:text-[#fff] py-2 px-4 border hover:border-[#000] text-[14px]"
-                                href="mailto:jobs@webstix.com"
+                                class=" inline-flex justify-center items-center  bg-[#a31e22] mt-4 hover:bg-[#000] text-[#fff] font-semibold hover:text-[#fff] py-2 px-4 border hover:border-[#000] text-[14px] "
+                                href={list.openingdetails.applynow.url}
                               >
                                 Apply Now
                               </a>
@@ -104,16 +122,16 @@ const Openings = () => {
                   {list.tags.nodes.map((i, j) => (
                     <span
                       key={i.id}
-                      class="inline-block bg-gray-200 lowercase rounded-full px-3 py-1 text-[13px] font-semibold text-gray-700 mr-2 mb-2"
+                      class="inline-block bg-[#bbb] rounded-full px-[10px] py-[5px] text-[10px] font-bold text-[#000] mr-2 mb-2 uppercase"
                     >
-                      #{i.name}
+                      {i.name}
                     </span>
                   ))}
                 </div>
 
                 <div class=" px-6 text-left pb-4 rounded-[2px]">
                   <a
-                    class="inline-flex justify-center mr-4 items-center  bg-[#a31e22] mt-4 hover:bg-[#000] text-[#fff] font-semibold hover:text-[#fff] py-2 px-4 border hover:border-[#000] text-[14px]"
+                    class="clsApplybtn inline-flex justify-center mr-4 items-center  bg-[#a31e22] mt-4 hover:bg-[#000] text-[#fff] font-semibold hover:text-[#fff] py-[7px] px-[14px] border hover:border-[#000] text-[14px]"
                     href={list.openingdetails.applynow.url}
                   >
                     Apply Now

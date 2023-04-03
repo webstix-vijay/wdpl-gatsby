@@ -9,13 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 import "../Gallery/gallery.css"
-import { useOutingQuery } from "../../hooks/useOutingQuery"
+import { useCelebrationQuery } from "../../hooks/useCelebrationQuery"
 
-const GalleryOuting = () => {
-  const data = useOutingQuery()
+const GalleryCelebration = () => {
+  const data = useCelebrationQuery()
   console.log(data)
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
+  const Content = data.wpGallery.content
 
   const [slideNumber, setSlideNumber] = useState(0)
   const [openModal, setOpenModal] = useState(false)
@@ -57,7 +58,7 @@ const GalleryOuting = () => {
           <div className="sliderWrap">
             <FontAwesomeIcon
               icon={faCircleXmark}
-              className="btnClose "
+              className="btnClose"
               onClick={handleCloseModal}
             />
             <FontAwesomeIcon
@@ -116,4 +117,4 @@ const GalleryOuting = () => {
   )
 }
 
-export default GalleryOuting
+export default GalleryCelebration

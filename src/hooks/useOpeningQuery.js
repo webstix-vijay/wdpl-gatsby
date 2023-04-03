@@ -31,6 +31,7 @@ export const useOpeningQuery = () => {
 
       wpPage(databaseId: { eq: 61 }) {
         content
+        title
       }
     }
   `)

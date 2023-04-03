@@ -8,7 +8,6 @@ export const useTeamQuery = () => {
           teamDetails {
             order
             linkedin
-            fieldGroupName
             designation
           }
           featuredImage {
@@ -23,6 +22,13 @@ export const useTeamQuery = () => {
       wpPage(databaseId: { eq: 51 }) {
         title
         content
+      }
+      allWpCategory {
+        nodes {
+          id
+          uri
+          name
+        }
       }
     }
   `)
