@@ -1,20 +1,13 @@
 import React from "react"
-import Footer from "../components/Footer/Footer"
-import Header from "../components/Header/Header"
-import chart from "../images/team-board-1b.jpg"
+import Header from "../components/Header/Header.js"
+import Footer from "../components/Footer/Footer.js"
+import OrganizationChart from "../components/OrgChart/OrganizationChart.js"
 
-export default function organizationChart() {
+export default function Organization() {
   return (
     <>
       <Header />
-      <div>
-        <div className="px-[1%]  container mx-auto" id="organization-chart">
-          <img
-            src={chart}
-            className=" w-full object-fill pt-[100px] pb-[80px]"
-          />
-        </div>
-      </div>
+      <OrganizationChart />
       <Footer />
     </>
   )

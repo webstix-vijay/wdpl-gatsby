@@ -7,7 +7,7 @@ import AboutUsTwo from "../components/AboutUs/AboutTwo"
 
 import ContactUs from "../components/ContactUs/ContactUs"
 import Footer from "../components/Footer/Footer.js"
-import Homegallery from "../components/HomeGallery.js/Homegallery.js"
+import Homegallery from "../components/HomeGallery/Homegallery.js"
 
 export default function index() {
   return (

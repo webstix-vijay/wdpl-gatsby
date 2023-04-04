@@ -13,7 +13,7 @@ export default function ContactUs() {
 
   return (
     <>
-      <section class="max-w-[85rem] mx-auto  lg:px-2 mb-[6rem] clsContact  lg:mt-[100px]">
+      <section class="max-w-[85rem] mx-auto  lg:px-2 mb-[6rem] clsContact  lg:mt-[100px] min-h-[530px]">
         <div class="flex flex-wrap">
           <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-7/12 md:pb-8 lg:w-6/12 px-3 lg:px-6">
             <h2 class="text-3xl font-bold mb-8 text-[#000] text-[36px] capitalize">

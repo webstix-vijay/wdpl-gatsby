@@ -6,18 +6,14 @@ import { FaArrowRight } from "react-icons/fa"
 
 export const Team = () => {
   const data = useTeamQuery()
-  console.log(data)
   const team = data.allWpTeam.nodes
   const title = data.wpPage.title
   const content = data.wpPage.content
   const cat = data.allWpCategory.nodes
-  console.log(cat)
-
-  console.log(team)
 
   return (
     <div class="max-w-[85rem] mx-auto  lg:px-6 flex lg:mb-[100px] md:mb-[100px]  clsteamContainer">
-      <div class="mb-10 md:mb-16  max-w-[32%] pr-[75px] fixed mt-[8rem] clsteamContent">
+      <div class="mb-10 md:mb-16  max-w-[32%] pr-[75px] fixed mt-[8rem] clsteamContent z-10">
         <h2 class="text-3xl font-bold mb-6 text-[#000] text-[40px] capitalize pt-4">
           {title}
         </h2>
@@ -27,8 +23,8 @@ export const Team = () => {
           dangerouslySetInnerHTML={{ __html: content }}
         />
 
-        <div className="flex flex-wrap">
-          <div>
+        <div className="flex flex-wrap ">
+          <div className="">
             {cat.map(c => (
               <>
                 <Link to={c.uri}>
@@ -74,24 +70,22 @@ export const Team = () => {
             </div>
 
             <div class="flex flex-col items-left justify-center">
-              <div class="font-bold text-[#000] md:text-lg">{t.title}</div>
-              <p class="mb-3 text-sm text-gray-500 md:text-base md:mb-3 clsDesignation">
+              <div className="flex justify-between">
+                <div class="font-bold text-[#000] md:text-lg">{t.title}</div>
+                <div className="pt-1">
+                  {t.teamDetails.linkedin ? (
+                    <div class="flex">
+                      <a href={t.teamDetails.linkedin} target="_blank">
+                        <FaLinkedin className="text-[#26a7de] text-[20px] clsLinkedIn" />
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 md:text-base clsDesignation">
                 {t.teamDetails.designation}
               </p>
-              <p
-                className="mb-2 clsContent"
-                dangerouslySetInnerHTML={{ __html: t.content }}
-              />
 
-              {t.teamDetails.linkedin ? (
-                <div class="flex">
-                  <div class="flex gap-4">
-                    <a href={t.teamDetails.linkedin} target="_blank">
-                      <FaLinkedin className="text-[#26a7de] text-[25px]" />
-                    </a>
-                  </div>
-                </div>
-              ) : null}
               {/* <div class="flex">
                 <div class="flex gap-4">
                   <a href={t.teamDetails.linkedin} target="_blank">

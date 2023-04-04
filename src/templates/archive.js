@@ -13,7 +13,7 @@ const archiveTemplate = ({
 }) => (
   <>
     <Header />
-    <div class="max-w-[85rem] mx-auto  lg:px-6 flex lg:mb-[100px]  clsteamContainer">
+    <div class="max-w-[85rem] mx-auto  lg:px-6 flex lg:mb-[100px] min-h-[650px] clsteamContainer">
       <div class="mb-10 md:mb-16  max-w-[34%] pr-[75px] fixed mt-[8rem] clsteamContent">
         <h2 class="text-3xl font-bold mb-6 text-[#000] text-[40px] capitalize pt-4">
           {wpPage.title}
@@ -41,7 +41,7 @@ const archiveTemplate = ({
         </div>
       </div>
 
-      <div class="grid gap-4 md:grid-cols-3 w-[62%] ml-auto h-fit lg:mt-[8rem] md:mt-[4rem] clsteamImage">
+      <div class="grid gap-4 md:grid-cols-3 w-[62%] ml-auto h-fit lg:mt-[8rem] md:mt-[4rem] mb-[4rem] clsteamImage">
         {allWpTeam.nodes.map(t => (
           <div class="p-4 shadow max-h-[460px]">
             <div class="h-[250px] mb-2 overflow-hidden rounded-lg bg-[#f5f5f5] shadow-lg md:h-[250px] clsTeamImagediv">
@@ -53,24 +53,21 @@ const archiveTemplate = ({
             </div>
 
             <div class="flex flex-col items-left justify-center">
-              <div class="font-bold text-[#000] md:text-lg">{t.title}</div>
-              <p class="mb-3 text-sm text-gray-500 md:text-base md:mb-3 clsDesignation">
+              <div className="flex justify-between">
+                <div class="font-bold text-[#000] md:text-lg">{t.title}</div>
+                <div className="pt-1">
+                  {t.teamDetails.linkedin ? (
+                    <div class="flex">
+                      <a href={t.teamDetails.linkedin} target="_blank">
+                        <FaLinkedin className="text-[#26a7de] text-[20px] clsLinkedIn" />
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 md:text-base clsDesignation">
                 {t.teamDetails.designation}
               </p>
-              <p
-                className="mb-2 clsContent"
-                dangerouslySetInnerHTML={{ __html: t.content }}
-              />
-
-              {t.teamDetails.linkedin ? (
-                <div class="flex">
-                  <div class="flex gap-4">
-                    <a href={t.teamDetails.linkedin} target="_blank">
-                      <FaLinkedin className="text-[#26a7de] text-[25px]" />
-                    </a>
-                  </div>
-                </div>
-              ) : null}
               {/* <div class="flex">
                 <div class="flex gap-4">
                   <a href={t.teamDetails.linkedin} target="_blank">

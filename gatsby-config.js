@@ -44,7 +44,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "http://localhost:10023/graphql",
+        url: "https://wdpl.mynocms.com/graphql",
       },
     },
   ],

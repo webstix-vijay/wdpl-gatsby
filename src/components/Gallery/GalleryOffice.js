@@ -13,7 +13,7 @@ import { useOfficeQuery } from "../../hooks/useOfficeQuery"
 
 const GalleryOffice = () => {
   const data = useOfficeQuery()
-  console.log(data)
+
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
 

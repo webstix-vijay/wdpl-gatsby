@@ -10,7 +10,6 @@ const Openings = () => {
   const opening = data.allWpOpenings.nodes
   const title = data.wpPage.title
   const Content = data.wpPage.content
-  console.log(opening)
 
   return (
     <>
@@ -122,7 +121,7 @@ const Openings = () => {
                   {list.tags.nodes.map((i, j) => (
                     <span
                       key={i.id}
-                      class="inline-block bg-[#bbb] rounded-full px-[10px] py-[5px] text-[10px] font-bold text-[#000] mr-2 mb-2 uppercase"
+                      class="inline-block bg-[#ddd] odd:bg-[#d1d5db] even:bg-[#d8b4fe]   rounded-full px-[10px] py-[5px] text-[10px] font-bold text-[#000] mr-2 mb-2 uppercase"
                     >
                       {i.name}
                     </span>

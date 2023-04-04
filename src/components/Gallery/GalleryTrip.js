@@ -13,7 +13,7 @@ import { useTripQuery } from "../../hooks/useTripQuery"
 
 const GalleryTrip = () => {
   const data = useTripQuery()
-  console.log(data)
+
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
 

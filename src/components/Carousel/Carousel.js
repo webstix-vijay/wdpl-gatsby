@@ -14,7 +14,6 @@ function Carousel() {
   console.log(data)
   const Content = data.wpPage.content
   const BannerImg = data.wpPage.featuredImage.node.localFile.publicURL
-  console.log(BannerImg)
 
   return (
     <>
@@ -41,7 +40,7 @@ function Carousel() {
                   dangerouslySetInnerHTML={{ __html: Content }}
                 />
 
-                <div class="xl:mt-7 w-full sm:inline-flex pb-[30px] pt-[10px]">
+                <div class="xl:mt-7  w-full sm:inline-flex clsherobtn  pb-[30px] pt-[10px]">
                   <Link to="/careers">
                     <button
                       class="inline-flex justify-center items-center  bg-[#a31e22] mt-2 hover:bg-[#000] text-[#fff] font-semibold hover:text-[#fff] py-2 px-6 border hover:border-[#000]"

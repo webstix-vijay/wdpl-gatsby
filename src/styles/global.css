@@ -15,6 +15,34 @@ html {
   display: inline-flex; */
 }
 
+.roundedtop {
+  min-height: 115px;
+  width: 125px;
+  /* background: #e9fffe;
+  box-shadow: 1px 1px 2px 0;
+  backdrop-filter: blur(20px); */
+  /* From https://css.glass */
+  background: rgba(214, 38, 38, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  position: absolute;
+  bottom: -70px;
+  right: -75px;
+  border-radius: 50%;
+}
+.roundedtop a {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.roundedtop svg {
+  font-size: 22px;
+}
+
 .react-read-more-read-less-less {
   border: 1px solid #aaa;
   display: block;
@@ -259,6 +287,7 @@ iframe {
   .clsHomeGallerydivOne {
     width: 100%;
     height: 40%;
+    padding-top: 10px;
   }
   .clsHomeGalleryImg {
     display: none;
@@ -271,6 +300,9 @@ iframe {
   }
 }
 @media screen and (max-width: 768px) {
+  .clsherobtn {
+    justify-content: center;
+  }
   /**** OUR TEAM *****/
   .clsteamContainer {
     display: block;
@@ -304,23 +336,24 @@ iframe {
   }
   .clsContact {
     margin-top: 250px;
+    margin-bottom: 4rem;
   }
   .clsAbouttwo {
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
   .clsHomeGalleryMain {
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 4rem;
   }
   .clsContact {
-    padding-right: 25px;
-    padding-left: 25px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
   .clsAboutOne {
-    display: block;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 5px;
   }
   .clsAboutContentdiv {
@@ -328,6 +361,13 @@ iframe {
   }
   .clsContactSinglePage .clsContact {
     margin-top: 130px;
+  }
+  .clsAboutContent img {
+    object-fit: contain;
+    min-height: 0px;
+  }
+  .clsAboutContent p {
+    width: 98%;
   }
 }
 
@@ -354,6 +394,10 @@ iframe {
 }
 
 @media screen and (max-width: 425px) {
+  .clsHomeBannertitle {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
   .modal {
     max-width: 300px !important;
   }
@@ -372,8 +416,15 @@ iframe {
   .clsteamContainer {
     margin-bottom: 100px;
   }
+  .clsAboutContent img {
+    display: none;
+  }
 }
 @media screen and (max-width: 375px) {
+  .clsHomeBannertitle {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
   .clsteamImage .clsTeamImagediv {
     height: 165px !important;
   }
@@ -382,6 +433,9 @@ iframe {
   }
   .clsApplybtn {
     font-size: 13px;
+  }
+  .clsLinkedIn {
+    font-size: 25px;
   }
 }
 
@@ -497,4 +551,11 @@ blockquote span {
   bottom: 0;
   transform: rotate(-45deg) translate(15%, 150%);
   background-color: #2980b9;
+}
+.clsAboutContent p {
+  padding-bottom: 15px;
+}
+.clsAboutContent img {
+  float: right;
+  width: 50%;
 }

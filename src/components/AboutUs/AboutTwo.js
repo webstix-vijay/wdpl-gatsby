@@ -5,14 +5,14 @@ import { useAboutQuery } from "../../hooks/useAboutQueryTwo"
 
 export default function AboutTwo() {
   const data = useAboutQuery()
-  const title = data.wpPage.blocks[0].originalContent
-  const Content = data.wpPage.blocks[2].originalContent
+  const title = data.wpPage.title
+  const Content = data.wpPage.content
   const Image = data.wpPage.featuredImage.node.localFile.publicURL
 
   return (
     <section class="max-w-[85rem] mx-auto lg:mt-[6rem]  lg:px-6 clsAbouttwo">
       <div class="flex flex-wrap">
-        <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-12/12 md:pb-12 lg:w-6/12 px-3 lg:px-2">
+        <div class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-12/12 md:pb-12 lg:w-6/12 px-3 lg:px-2">
           <h2
             class="text-3xl font-bold mb-6 text-[#000] text-[36px] capitalize pt-4"
             dangerouslySetInnerHTML={{ __html: title }}

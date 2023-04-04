@@ -13,7 +13,7 @@ import { useDiscussionsQuery } from "../../hooks/useDiscussionsQuery"
 
 const GalleryDiscussions = () => {
   const data = useDiscussionsQuery()
-  console.log(data)
+
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
   const Content = data.wpGallery.content

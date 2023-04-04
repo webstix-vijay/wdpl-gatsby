@@ -4,7 +4,7 @@ import { useHomeGallery } from "../../hooks/useHomeGallery"
 
 export default function Homegallery() {
   const data = useHomeGallery()
-  console.log(data)
+
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
   const Content = data.wpGallery.content

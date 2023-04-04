@@ -13,7 +13,7 @@ import { useOutingQuery } from "../../hooks/useOutingQuery"
 
 const GalleryOuting = () => {
   const data = useOutingQuery()
-  console.log(data)
+
   const galleryImages = data.wpGallery.gallery.photos
   const title = data.wpGallery.title
 
