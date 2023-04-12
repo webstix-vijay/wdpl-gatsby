@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { Swiper, SwiperSlide } from "swiper/react"
 
@@ -52,7 +52,11 @@ function Carousel() {
                 </div>
               </div>
               <div class=" ml-8  xl:w-[54%] md:-w-[100%] md:pt-[50px]">
-                <img class="w-full rounded-md" src={BannerImg} />
+                <img
+                  class="w-full rounded-md"
+                  src={BannerImg}
+                  alt="Hero-image"
+                />
               </div>
             </div>
           </div>

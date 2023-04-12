@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import logo from "../../images/webstix.png"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
-import closeIcon from "../../images/close-icon.png"
+
 import { FaBars, FaTimes } from "react-icons/fa"
 import "../Header/Navbar.css"
 

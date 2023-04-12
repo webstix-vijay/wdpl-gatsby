@@ -15,7 +15,6 @@ const GalleryOuting = () => {
   const data = useOutingQuery()
 
   const galleryImages = data.wpGallery.gallery.photos
-  const title = data.wpGallery.title
 
   const [slideNumber, setSlideNumber] = useState(0)
   const [openModal, setOpenModal] = useState(false)

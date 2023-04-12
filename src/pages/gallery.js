@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import Footer from "../components/Footer/Footer"
-import GalleryDiscussion from "../components/Gallery/GalleryCelebration"
+
 import GalleryOuting from "../components/Gallery/GalleryOuting"
 import Header from "../components/Header/Header"
-import { Tabs, Tab, AppBar } from "@material-ui/core"
+import { Tabs, Tab } from "@material-ui/core"
 import { Link } from "gatsby"
 import GalleryOffice from "../components/Gallery/GalleryOffice"
 import { useOfficeQuery } from "../hooks/useOfficeQuery"

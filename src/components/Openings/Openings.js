@@ -1,13 +1,11 @@
 import React from "react"
 import { useOpeningQuery } from "../../hooks/useOpeningQuery"
-import { useState } from "react"
 import { Link } from "gatsby"
 import Popup from "reactjs-popup"
 import { HiArrowNarrowRight } from "react-icons/hi"
 
 const Openings = () => {
   const data = useOpeningQuery()
-  const opening = data.allWpOpenings.nodes
   const title = data.wpPage.title
   const Content = data.wpPage.content
 

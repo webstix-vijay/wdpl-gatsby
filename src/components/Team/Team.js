@@ -64,7 +64,7 @@ export const Team = () => {
             <div class="h-[250px] mb-2 overflow-hidden rounded-lg bg-[#f5f5f5] shadow-lg md:h-[250px] clsTeamImagediv">
               <img
                 src={t.featuredImage.node.sourceUrl}
-                alt="Image"
+                alt="team-img"
                 class="object-cover relative object-center w-full h-[280px]"
               />
             </div>
@@ -75,7 +75,11 @@ export const Team = () => {
                 <div className="pt-1">
                   {t.teamDetails.linkedin ? (
                     <div class="flex">
-                      <a href={t.teamDetails.linkedin} target="_blank">
+                      <a
+                        href={t.teamDetails.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         <FaLinkedin className="text-[#26a7de] text-[20px] clsLinkedIn" />
                       </a>
                     </div>

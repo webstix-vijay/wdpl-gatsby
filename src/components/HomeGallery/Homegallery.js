@@ -6,8 +6,6 @@ export default function Homegallery() {
   const data = useHomeGallery()
 
   const galleryImages = data.wpGallery.gallery.photos
-  const title = data.wpGallery.title
-  const Content = data.wpGallery.content
   const slice = galleryImages
 
   return (

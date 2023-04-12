@@ -41,7 +41,7 @@ export default function AboutTwo() {
         </div>
 
         <div class="grow-0 shrink-0 basis-auto  sm:mb-[0px] w-full md:w-12/12 lg:w-6/12 px-3 pt-1  lg:px-6">
-          <img src={Image} />
+          <img src={Image} alt="about-us" />
         </div>
       </div>
     </section>

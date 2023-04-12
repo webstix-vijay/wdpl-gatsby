@@ -9,7 +9,11 @@ export default function OrganizationChart() {
   return (
     <div>
       <div className="px-[1%]  container mx-auto" id="organization-chart">
-        <img src={Image} className=" w-full object-fill pt-[100px] pb-[10px]" />
+        <img
+          src={Image}
+          alt="org-chart"
+          className=" w-full object-fill pt-[100px] pb-[10px]"
+        />
       </div>
       <div className="flex items-center justify-center pb-[70px]">
         <div>

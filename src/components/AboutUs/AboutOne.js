@@ -24,6 +24,7 @@ export default function AboutOne() {
           <img
             src={Image}
             className="w-full object-cover min-h-[600px] pl-[40px]"
+            alt="about-us"
           />
           <p
             className="leading-7 text-[17px] xl:w-[82%] "
